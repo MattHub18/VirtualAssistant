@@ -1,12 +1,17 @@
 import tkinter as tk
 from tkinter import PhotoImage
 
+import task
 import voice
 
 
 def get_question(entry1):
     x1 = entry1.get()
-    voice.speak(x1)
+    if x1 != "":
+        result, audible = task.search(x1)
+        if audible:
+            voice.speak(result)
+    entry1.delete(0, 'end')
 
 
 def gui():
@@ -25,6 +30,7 @@ def gui():
     photo = PhotoImage(file=r"res\AI.png")
     photoimage = photo.subsample(7, 7)
     button1 = tk.Button(image=photoimage, background='#ffffff', command=lambda: get_question(entry1))
+
     canvas1.create_window(150, 180, window=button1)
 
     root.mainloop()
