@@ -1,18 +1,9 @@
-import datetime
-import time
-
-
-def greeting():
-    return "Hi, I'm a Simple Artificial Virtual Assistant, but you can call me SAVA", True
-
-
-def this_time():
-    return str(datetime.datetime.fromtimestamp(time.time()).strftime('%H:%M:%S. %m/%d/%Y')), True
-
+from functionality import *
 
 task = {
     "greeting": greeting(),
-    "time": this_time()
+    "time": this_time(),
+    "speedtest": spt()
 }
 
 
