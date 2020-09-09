@@ -3,7 +3,8 @@ from functionality import *
 task = {
     "greeting": greeting(),
     "time": this_time(),
-    "speedtest": spt()
+    "speedtest": spt(),
+    "joke": jk()
 }
 
 
