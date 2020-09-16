@@ -1,8 +1,11 @@
 import datetime
 import random
 import time
+import tkinter as tk
 
 from speedtest import Speedtest
+
+from music_mixer import Mixer
 
 
 def search(x1):
@@ -28,5 +31,12 @@ def search(x1):
             return "A software developer brought his pet to work. It was a cute Python", True
         elif rd % 3 == 2:
             return "Where does programmer go on holiday? To the C", True
+
+    elif "playlist" in x1:
+        mixer = tk.Toplevel()
+        app = Mixer(mixer, 'res/disc.png')
+        mixer.wait_window()
+        app.exit()
+        return "", False
     else:
         return "Sorry, I can't do it", True
